@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TakeMe</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+	<script type="text/javascript" src="https://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+jQuery(document).ready(function($){
+	$('<style>'+
+		'.scrollTop{ display:none; z-index:9999; position:fixed;'+
+			'bottom:20px; left:90%; width:88px; height:125px;'+
+			'background:url(img/arrow4.png) 0 0 no-repeat; }' +
+		'.scrollTop:hover{ background-position:0 -133px;}'
+	+'</style>').appendTo('body');
+	var
+	speed = 550,
+	$scrollTop = $('<a href="#" class="scrollTop">').appendTo('body');		
+	$scrollTop.click(function(e){
+		e.preventDefault();
+		$( 'html:not(:animated),body:not(:animated)' ).animate({ scrollTop: 0}, speed );
+	});
+
+	//появление
+	function show_scrollTop(){
+		( $(window).scrollTop() > 330 ) ? $scrollTop.fadeIn(700) : $scrollTop.fadeOut(700);
+	}
+	$(window).scroll( function(){ show_scrollTop(); } );
+	show_scrollTop();
+});
+</script>
+</head>
+<body>
+	<header>
+		<div class="header_logo"><p>TakeMe</p></div>
+		<nav class="nav_header">
+			<div class="topnav" id="myTopnav">
+				<a href="#locations_href">Locations</a>
+				<a href="#accommodation">Accommodation</a>
+				<a href="#travelguides">Travel Guides</a>
+				<a href="#wheretostay">Where To Stay</a>
+				<a href="#contactus">Contact Us</a>
+				<a href="#">Log In</a>
+				<a href="#" id="menu" class="icon">&#9776</a>
+			</div>
+		</nav>
+	</header>
+	<div id="grayplace"></div>
+	<main>
+		<section>
+		<div class="background">
+			<div class="firstword">
+				<h1 class="upwords">Find Your Dream Vacation Location</h1>
+				<p class="downwords">Search hundreds of locations from around the world and find your perfect vacation location</p>
+			</div>
+			<form method="post" action="#" id="search_form">
+				<input type="search" name="search_field" class="inputcolortext" placeholder="Country or ZIP code">
+				<select name="transport" id="transport_select">
+					<option>Transportation</option>
+					<option>Bus</option>
+					<option>Plane</option>
+				</select>
+				<input type="text" name="search_field" class="inputcolortext" placeholder="Number of people">
+				<input type="submit" class="btn" value="Search">	
+			</form>
+		</div>
+	</section>
+		<div id="grayplace"></div>
+		<section id="locations_href">
+		<div  class="background2">
+			<div class="firstword2">
+				<h1 class="upwords">Find Your Dream <br> Vacation Location</h1>
+				<p class="downwords">Search hundreds of locations from around the world <br> and find your perfect vacation location</p>
+			</div>
+			<form method="post" action="#" id="search_form">
+				<input type="search" name="search_field" class="inputcolortext" placeholder="Country or ZIP code">
+				<select name="transport" id="transport_select">
+					<option>Transportation</option>
+					<option>Bus</option>
+					<option>Plane</option>
+				</select>
+				<input type="text" name="search_field" class="inputcolortext" placeholder="Number of people">
+				<input type="submit" class="btn" value="Search">	
+			</form>
+		</div>
+	</section>
+		<div id="grayplace"></div>
+		<section id="travelguides">
+		<div id="back_ground_image" class="background3">
+			<div class="description">
+			  <h1 class="magicalsantorini">Magical Santorini <br> Greece’s Jewel</h1>
+			  <p class="magical_san">Candy-colored houses carved into cliffs, sapphire waters, <br> gleaming white buildings topped with half-spheres <br> the color of a stormy sky.</p>
+			  <input type="submit" class="btn2" value="Explore More">
+		    </div>
+            <div class="slider">
+            	<input type="radio" id="btn-1" name="toggle" checked>
+                <input type="radio" id="btn-2" name="toggle">
+                <input type="radio" id="btn-3" name="toggle">
+                <input type="radio" id="btn-4" name="toggle">
+                <input type="radio" id="btn-5" name="toggle">
+                <div class="slider-controls">
+                    <label for="btn-1"></label>
+                    <label for="btn-2"></label>
+                    <label for="btn-3"></label>
+                    <label for="btn-4"></label>
+                    <label for="btn-5"></label>
+                </div>                    
+                <div class="slider-inner">
+                    <div class="slider-slides">
+                    <img src="img/3_1.jpg">
+                    <img src="img/3_2.jpg">
+                    <img src="img/3_3.jpg">
+                    <img src="img/3_1.jpg">
+                    <img src="img/3_2.jpg">
+                </div>
+	        </div>
+		</div>
+		</section>
+		<div id="grayplace"></div>
+		<section id="locations_href">
+		<div id="back_ground_image" class="background4">
+			<div class="container1">
+			<div class="colomn">
+				<img src="img/4.1.jpg" class="img_place">
+				<h2 class="name_city">Magical Paris</h2>
+				<p class="descp">City of light, one of the most famous cities in the world is waiting to be explored. Some of the most famous museums, food and landmarks are waiting for you in Paris.</p>
+				<div class="stars">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating2.jpg">
+				</div>
+				<p class="stars" id="ratings">2436 Ratings</p>
+			</div>
+			<div class="colomn">
+				<img src="img/4.2.jpg" class="img_place">
+				<h2 class="name_city">Classic London</h2>
+				<p class="descp">City of history, one of the most famous cities in the world is waiting to be explored. Some of the most famous museums, food, pubs and landmarks are waiting for you in London.</p>
+				<div class="stars">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating2.jpg">
+				</div>
+				<p class="stars"id="ratings">5438 Ratings</p>
+			</div>
+			<div class="colomn">
+				<img src="img/4.3.jpg" class="img_place">
+				<h2 class="name_city">Famous New York</h2>
+				<p class="descp">City of fasion, one of the most famous cities in the world is waiting to be explored. Some of the most famous museums, food and landmarks are waiting for you in New York.</p>
+				<div class="stars">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating1.jpg">
+					<img src="img/rating2.jpg">
+				</div>
+				<p class="stars"id="ratings">1243 Ratings</p>
+			</div>
+		</div>
+		</div>
+		<div id="accommodation"></div>
+		<section id="wheretostay">
+			<div class="background6">
+				<div class="subsc">
+					<h1 class="magicalsantorini1">Subscribe to our newsletters</h1>
+			        <p class="magical_san1">And receive all the latest news, discounts and updates about the most visited <br> locations from around the globe, daily.</p>
+				</div>
+				<div class="sum">
+					<input type="submit" class="btn2" value="Subscribe">
+				</div>
+			</div>
+		</section>
+		<div id="grayplace"></div>
+		<section id="contactus">
+			<div class="background7">
+				<div class="contact">
+					<h1 class="magicalsantorini2">Contact Us</h1>
+					<form method="post" action="#" id="search_form2">
+						<div class="form_contact">
+						  <input type="text" name="search_field" class="inputcolortext1" placeholder="First Name">
+						  <input type="text" name="search_field" class="inputcolortext" placeholder="Last Name">
+						</div>
+						<div class="form_contact1">
+				          <input type="text" name="search_field" class="inputcolortext1" placeholder="Email">
+				          <input type="text" name="search_field" class="inputcolortext" placeholder="Phone">
+				        </div>
+				          <textarea class="your_mas" placeholder="Your message"></textarea>
+				          <input type="submit" class="btn" value="Send" id="send">	
+				        
+					</form>
+				</div>
+				<div class="contact_image">
+					<img src="img/contact.jpg">
+				</div>
+			</div>
+		</section>
+		<div id="grayplace"></div>
+		<section>
+			<div class="background8">
+				<div class="reviews">
+				  <p class="star">Reviews(256)</p>
+				  <form method="post" action="#" id="review">
+				    <select name="Sort" id="sort_select">
+					    <option>Sort</option>
+					    <option>Date</option>
+					    <option>Name</option>
+					    <option>Rating</option>
+				    </select>
+				    <input type="submit" class="btn1" value="Post a review">
+			      </form>
+			    </div>
+			    <hr>
+			    <div class="review_container">
+			    <div class="rev1">
+			    	<img src="img/avatar.png" class=" avatar_rev">
+			    	<div class="name_rating_avatar">
+			    	  <p class="name_avatar">Anna Marksson<br> Visited Las Vegas</p>
+			    	  <label>
+			    		<img src="img/star3.png">
+			    		<img src="img/star3.png">
+			    		<img src="img/star3.png">
+			    		<img src="img/star3.png">
+			    		<img src="img/star5.png">
+			    	  </label>
+			        </div>
+			        <div id="rev_avat">
+			    	  <h3 class="review_avatar">We had a lovely time <br>02.17.2017</h3>
+			    	  <p class="des_avatar">“I don’t know where to start. It was simply amazing! From the...</p>
+			        </div>
+			    </div>
+			    </div>
+			    <hr>
+			    <div class="review_container">
+			      <div class="rev1">
+			    	  <img src="img/avatar2.png" class=" avatar_rev">
+			    	  <div class="name_rating_avatar">
+			    	    <p class="name_avatar">Edward Signim<br> Visited Rome</p>
+			    	    <label>
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star5.png">
+			    	  </label>
+			        </div>
+			        <div id="rev_avat">
+			    	  <h3 class="review_avatar">Magical Rome!<br> 02.16.2017</h3>
+			    	  <p class="des_avatar">“Everybody knows how much history this city has, but we were...</p>
+			        </div>
+			    </div>
+			    </div>
+			    <hr>
+			    <div class="review_container">
+			      <div class="rev1">
+			    	  <img src="img/avatar3.png" class=" avatar_rev">
+			    	  <div class="name_rating_avatar">
+			    	    <p class="name_avatar">Jenna Miles<br> Visited Belgrade</p>
+			    	    <label>
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star5.png">
+			    	  </label>
+			        </div>
+			        <div id="rev_avat">
+			    	  <h3 class="review_avatar">Where Sava meets Danube<br> 02.15.2017</h3>
+			    	  <p class="des_avatar">“This city is nothing what i expected. Such a lively place, ful...</p>
+			        </div>
+			    </div>
+			    </div>
+			    <hr>
+			    <div class="review_container">
+			      <div class="rev1">
+			    	  <img src="img/avatar4.png" class=" avatar_rev">
+			    	  <div class="name_rating_avatar">
+			    	    <p class="name_avatar">Jonathan Bright<br> Visited Tahiti</p>
+			    	    <label>
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star3.png">
+			    		  <img src="img/star5.png">
+			    	  </label>
+			        </div>
+			        <div id="rev_avat">
+			    	  <h3 class="review_avatar">White sand, blue skies<br> 02.14.2017</h3>
+			    	  <p class="des_avatar">“When we got there it was raining, but after it stopped, it was...</p>
+			        </div>
+			    </div>
+			    </div>
+			    <hr>
+			    <input type="submit" class="btn3" value="Search">
+			</div>
+			</div>
+			</div>
+		</section>
+		<div id="grayplace"></div>
+		<section>
+			<p>
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A63e0bccc81b9f4a5c05300878217683716c9864828ada21f344626de7c8a3a8e&amp;width=100%25&amp;height=460&amp;lang=ru_RU&amp;scroll=true"></script>
+			</p>
+		</section>
+		<div id="grayplace"></div>
+		<section>
+			<div class="background9">
+				<div class="container_Dubai">
+					<h1 class="h1_Dub">See Dubai from the sky</h1>
+					<iframe class="video_Dub" width="560" height="315" src="https://www.youtube.com/embed/5D0VhA1ycvo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</section>
+		<div id="grayplace"></div>
+		<section>
+			<div class="background10">
+				<div class="photo">
+					<img src="img/photo.png">
+				</div>
+				<div class="words_phone">
+					<h1 class="download_app">Download Our Free App!</h1>
+					<p class="dow">Download our free app and stay up to date with all our latest discounts. Take a look at all<br> the world's top destinations and deside where to sperd your perfect vacation.</p>
+					<input type="submit" class="btn4" value="Download Now">
+				</div>
+			</div>
+		</section>
+		<div id="grayplace"></div>
+		<footer>
+			<div class="footer_container">
+				<div class="background11">
+					<div class="blocks1">
+					<div class="company">
+						<h3 class="footer_h">Company</h3>
+						<nav class="footer_nav">
+							<div class="nav_footer">
+								<a href="#">About Us</a><br><br>
+								<a href="#">Careers</a><br><br>
+								<a href="#">Contact Us</a><br><br>
+								<a href="#">Affiliates</a><br><br>
+								<a href="#">News</a><br><br>
+								<a href="#">Our App</a><br><br>
+								<a href="#">Site Map</a><br><br>
+							</div>
+						</nav>
+					</div>
+					<div class="useful_links">
+						<h3 class="footer_h">Usefel Links</h3>
+						<nav lass="footer_nav">
+							<div class="nav_footer">
+								<a href="#">Travel Safe</a><br><br>
+								<a href="#">Stay Healthy</a><br><br>
+								<a href="#">Flight Monitor</a><br><br>
+								<a href="#">Booking List</a><br><br>
+								<a href="#">Lost Lugage</a><br><br>
+								<a href="#">World Clock</a><br><br>
+							</div>
+						</nav>
+					</div>
+					<div class="for_compains">
+						<h3 class="footer_h">For Compains</h3>
+						<nav lass="footer_nav">
+							<div class="nav_footer">
+								<a href="#">Advertise With Us</a><br><br>
+								<a href="#">How It Works</a><br><br>
+								<a href="#">Pricing Models</a><br><br>
+								<a href="#">VAT Numbers</a><br><br>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="stay_in_touch">
+					<h3 class="footer_h">Stay In Touch</h3>
+					<form method="post" action="#" id="review">
+				     <div class="footer_div">
+				      <input type="text" name="search_field" class="inputcolortext1" placeholder="Email">
+				      <input type="submit" class="btn7" value="Subscribe">
+				     </div>
+			      </form>
+				</div>
+				</div>
+			</div>
+		</footer>
+		<div id="grayplace"></div>
+	</main>
+</body>
+</html>
